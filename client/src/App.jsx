@@ -3,7 +3,7 @@ import Header from "./pages/Header";
 
 function App() {
   return (
-    <div className="bg-black">
+    <div>
       <GlobalStyles />
       <Header />
     </div>

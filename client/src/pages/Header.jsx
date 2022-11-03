@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Nav from "../components/Nav";
+import LeftNav from "../components/LeftNav";
+import RightNav from "../components/RightNav";
 import NavMobile from "../components/NavMobile";
 
 const Header = () => {
@@ -12,23 +13,25 @@ const Header = () => {
   return (
     <header
       className={`${
-        bg ? "bg-stone-300 h-20" : "h-24"
-      } flex items-center fixed top-0 w-full text-white z-10 transition-all duration-300`}
+        bg ? " h-20" : "h-24 underline"
+      } flex items-center fixed top-0 w-full text-black z-10 transition-all duration-300`}
     >
       <div className="container mx-auto h-full flex items-center justify-between ">
+        {/*Left-Nav*/}
+        <div className="hidden lg:flex items-center text-center">
+          <LeftNav />
+        </div>
+        {/*NavMobile*/}
+        <div className="lg:hidden">
+          <NavMobile />
+        </div>
         {/*Logo*/}
         <a href="/" className="ease-out duration-500 font-semibold font-sans">
           KIND HEARTED
         </a>
-
-        {/*Nav*/}
+        {/*Right-Nav*/}
         <div className="hidden lg:flex items-center text-center">
-          <Nav />
-        </div>
-
-        {/*NavMobile*/}
-        <div className="lg:hidden">
-          <NavMobile />
+          <RightNav />
         </div>
       </div>
     </header>
